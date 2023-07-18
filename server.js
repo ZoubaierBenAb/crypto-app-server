@@ -20,11 +20,10 @@ const deleteAllCoinCategories = require('./coin-org/deleteCoinCategories')
 
 async function connectToDatabase() {
   try {
-    await mongoose.connect('mongodb+srv://weirdscenario:123123123@cluster0.r373vsw.mongodb.net/', {
-      
+    await mongoose.connect(process.env.DATABASE_URL, {
+     
     });
     console.log('Connected to MongoDB');
-   
   } catch (error) {
     console.error('Failed to connect to MongoDB:', error);
   }
